@@ -2,41 +2,51 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Holidays for Cadets</title>
+    <title>Список держзамовлення курсантів</title>
+    <link th:href="@{css/bootstrap.min.css}"  rel="stylesheet" />
 </head>
-<body>
+
+<body bgcolor="#ddf78d">
 <div class="container">
-    <h1>Список державного за овлення курсантів</h1>
+    <h1>Список держзамовлення курсантів</h1>
     <div class="row">
-                <form action="/add-organization" method="post">
-                    Organization
-                    <input type="text" name="organization_text">
-                    Speciality:
-                    <br>
-                    <input type="text" name="speciality">
-                    <br>
-                    Count:
-                    <br>
-                    <input type="number" name="count">
-                    <br>
-                    Date:
-                    <input type="number" name="year">
-                    <br> <br>
-                    <button type="submit">Add</button>
-                </form>
+        <br>
+        <form action="/add-organization" method="post">
+            <table>
+                <tr>
+                    <td>Організація:</td>
+                    <td><input type="text" name="organization_text"></td>
+                </tr>
+                <tr>
+                    <td>Спеціальність:</td>
+                    <td><input type="text" name="specialty"></td>
+                </tr>
+                <tr>
+                    <td>Кількість курсантів:</td>
+                    <td><input type="number" name="count"></td>
+                </tr>
+                <tr>
+                    <td>Рік:</td>
+                    <td><input type="text" name="year"></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Додати</button></td>
+                </tr>
+            </table>
+        </form>
         <br>
         <div>
             <a href="/download/pdf">Click here to download pdf</a> <br>
             <a href="/download/excel">Click here to download excel</a><br>
         </div>
-
+        <br>
         <table class="table">
             <thead>
             <tr>
-                <th>Organization</th>
-                <th>Speciality</th>
-                <th>Count</th>
-                <th>Date</th>
+                <th>Організація</th>
+                <th>Спеціальність</th>
+                <th>Кількість курсантів</th>
+                <th>Рік</th>
             </tr>
             </thead>
             <tbody>
